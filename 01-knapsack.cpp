@@ -3,9 +3,9 @@
 using namespace std;
 int main(){
 	int sack,n;
-	cout << "Enter sack size";
+	cout << "Enter sack size: ";
 	cin >> sack;
-	cout <<"Enter size: ";
+	cout <<"Enter size : ";
 	cin >>n;
 	n+=1;
 	int mat[n][sack +1];
@@ -15,12 +15,12 @@ int main(){
 	value[0] = 0;
 	
 	for(int i = 1;i < n;i++){
-		cout <<"Enter weight";
+		cout <<"Enter weight : ";
 		cin >> weight[i];
 	}
 	
 	for(int i = 1;i < n;i++){
-		cout <<"Enter value";
+		cout <<"Enter value : ";
 		cin >> value[i];
 	}	
 	for(int i =0;i < n; i++){
@@ -40,6 +40,7 @@ int main(){
 			}
 		}
 	}
+	/*
 	cout <<"WHOLE MAT"<<endl;
 	for(int i = 0;i < n;i++){
 		for(int j = 0; j < sack +1; j++){
@@ -47,5 +48,22 @@ int main(){
 		}
 		cout << endl;
 	}
+	*/
+	
+	//Back Tracking
+	int i = n - 1;
+	int j = sack;
+	cout << "WEIGHTS : ";	
+	while(j > 0){
+		if(mat[i-1][j] == mat[i][j]){
+			i-=1;
+		}else{
+			i-=1;
+			j-=weight[i+1];
+			cout <<weight[i+1]<<",";
+		}
+	}
+	cout <<endl<<"TOTAL VALUE :" << mat[n-1][sack];
+	
 	return 0;
 }
