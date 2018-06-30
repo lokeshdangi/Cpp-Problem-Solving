@@ -3,7 +3,7 @@
 using namespace std;
 string notes[] = {"C","C#","D","D#","E","F","F#","G","G#","A","A#","B"};
 
-void print(int start, int iter){
+void print(int i,int start, int iter){
 	string temp;
 	while(iter >= 0){
 		if(start + 1 > 11){
@@ -12,7 +12,7 @@ void print(int start, int iter){
 		start+=1;
 		iter-=1;
 	}
-	cout << notes[start-1] <<endl;
+	cout << "Case " <<i<<":"<<notes[start-1] <<endl;
 
 }
 int main(){
@@ -29,7 +29,7 @@ int main(){
 	
 	for(int i =0; i<n; i++){
 		
-		print(map[1][T[i][1]-1],T[i][0]);
+		print(i,map[1][T[i][1]-1],T[i][0]);
 		/*
 		switch(T[i][1]){
 			case 1: print(4,T[i][0]); break;
