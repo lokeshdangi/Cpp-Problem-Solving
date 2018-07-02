@@ -5,14 +5,14 @@ string notes[] = {"C","C#","D","D#","E","F","F#","G","G#","A","A#","B"};
 
 void print(int i,int start, int iter){
 	string temp;
-	while(iter >= 0){
+	while(iter > 0){
 		if(start + 1 > 11){
 			start = -1;
 		}
 		start+=1;
 		iter-=1;
 	}
-	cout << "Case " <<i<<":"<<notes[start-1] <<endl;
+	cout << "Case " <<i<<":"<<notes[start] <<endl;
 
 }
 int main(){
